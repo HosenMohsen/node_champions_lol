@@ -1,0 +1,86 @@
+[
+  {
+    "name": "Kalista",
+    "role": "marksmen"
+  },
+  {
+    "name": "Viego",
+    "role": "fighter"
+  },
+  {
+    "name": "Lee Sin",
+    "role": "fighter"
+  },
+  {
+    "name": "Alistar",
+    "role": "support"
+  },
+  {
+    "name": "Ivern",
+    "role": "support"
+  },
+  {
+    "name": "Gnar",
+    "role": "tank"
+  },
+  {
+    "name": "Briar",
+    "role": "assassin"
+  },
+  {
+    "name": "Aatrox",
+    "role": "tank"
+  },
+  {
+    "name": "Ahri",
+    "role": "assassin"
+  },
+  {
+    "name": "Lilia",
+    "role": "fighter"
+  },
+  {
+    "name": "Jax",
+    "role": "fighter"
+  },
+  {
+    "name": "Kennen",
+    "role": "mage"
+  },
+  {
+    "name": "Leblanc",
+    "role": "mage"
+  },
+  {
+    "name": "Ezreal",
+    "role": "marksmen"
+  },
+  {
+    "name": "Vayne",
+    "role": "marksmen"
+  },
+  {
+    "name": "Zed",
+    "role": "assassin"
+  },
+  {
+    "name": "Jarvan IV",
+    "role": "tank"
+  },
+  {
+    "name": "Kayn",
+    "role": "assassin"
+  },
+  {
+    "name": "Sett",
+    "role": "fighter"
+  },
+  {
+    "name": "Swain",
+    "role": "tank"
+  },
+  {
+    "name": "Draven",
+    "role": "marksmen"
+  }
+]

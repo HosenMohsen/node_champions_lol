@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!--     <form onsubmit="event.preventDefault(); updateChampion()"> -->
+        <input type="text" name="champion">
+        <input type="text" name="role">
+        <button type="submit" onclick="updateChampion()"> Update champion </button>
+  <!--   </form> -->
+    <script>
+        let url = window.location.search
+        let id = new URLSearchParams(url).get('id')
+
+        fetch(`http://localhost:3000/champions/${id}`)
+            .then((response) => response.json())
+            .then((data) => {
+               let champion = document.querySelector('input[name="champion"]')
+               champion.value = data.name
+                let role = document.querySelector('input[name="role"]')
+                role.value = data.role
+            })
+
+        const updateChampion = async () => {
+            /* event.preventDefault() */
+            let champion = document.querySelector('input[name="champion"]').value
+            let role = document.querySelector('input[name="role"]').value
+            /* console.log(champion) */
+            let response = await fetch(`http://localhost:3000/champions/${id}`,{
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({name: champion} , {role: role})
+            })
+            window.location.href = 'index.html'
+        }
+    </script>
+</body>
+</html>

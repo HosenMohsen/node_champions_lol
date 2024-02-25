@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form onsubmit="event.preventDefault(); sendChampion()">
+        <input type="text" name="champion" placeholder="nom du champion">
+        <input type="text" name="role" placeholder="role du champion">
+        <button onclick="sendChampion()">New Champion </button>
+    </form>
+
+    <h1> Liste des Champions </h1>
+    <div id="champions"> </div>
+    <script>
+        fetch('http://localhost:3000/champions')
+            .then((response) => response.json())
+            .then (( data) => {
+                console.log(data)
+                let champions = document.querySelector('#champions')
+                data.forEach(champion => {
+                    champions.innerHTML += 
+                    ` 
+                    <a href="champion.html?id=${champion.id}">
+                        <div> 
+                            <h2> ${champion.name} à le role de ${champion.role} </h2>  
+                        </div>
+                        
+                        </a>
+                     ` 
+                })
+            }) 
+
+            const sendChampion = async () => {
+                event.preventDefault()
+                let champion = document.querySelector('input[name="champion"]').value
+                let role = document.querySelector('input[name="role"]').value
+
+                await fetch('http://localhost:3000/champions', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({name: champion, role: role})
+                })
+                window.location.href = 'index.html'
+            }
+
+    </script>
+</body>
+</html>
